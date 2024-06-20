@@ -36,10 +36,16 @@ def index():
     html_content = """
     <html>
         <head>
-            <title>Some HTML in here</title>
+            <meta charset = "utf-8">
+            <title>diary</title>
         </head>
         <body>
-            <h1>Look ma! HTML!</h1>
+            <h1>日記20240618</h1>
+            <p>書く内容が無かったので、毎日Obsidianでつけている日記の一部を載せておきます。</p>
+            <p> 日記 20240618 やったこと ES2枚提出 インターン内定+1 月曜火曜課題 <br> 
+            やること ソフでICPC勉強会予定 AtCoderすすめて 研究室探しもそろそろ <br>
+            雑多 久々に河川敷を走った, もう夏だなあ 森永ラムネの炭酸味が美味しすぎる, 食べ過ぎちゃうから良くないね～ </p> 
+            
         </body>
     </html>
     """
