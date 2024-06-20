@@ -62,6 +62,7 @@ async def aniv_list():
     def youraniv(aniv):
         today = datetime.date.today()
         weekday = today.strftime("%A")
-        return {"response": f"サーバです。本日は {today}（{weekday}）です。{aniv}は{aniv_list}です。", "aniv_list": aniv_list}
+        chosen_aniv = random.choice(aniv_list)
+        return {"response": f"サーバです。本日は {today}（{weekday}）です。{aniv}は{chosen_aniv}です。", "aniv_list": aniv_list}
     
     return youraniv(aniv_list)
