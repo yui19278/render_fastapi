@@ -2,6 +2,7 @@ from typing import Optional
 from fastapi import FastAPI
 import random  # randomライブラリを追加
 from fastapi.responses import HTMLResponse #インポート
+import datetime
 
 app = FastAPI()
 
@@ -51,6 +52,12 @@ def index():
     """
     return HTMLResponse(content=html_content, status_code=200)
 
-@app.post("/present")
-async def give_present(present):
-    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
+@app.post("/aniv")
+async def aniv_list():
+    aniv_list = [
+        "国民の祝日",
+        "振替休日"
+    ]
+    today = datetime.date.today()
+    weekday = today.strftime("%A")
+    return {"response": f"サーバです。本日は {today}（{weekday}）です。", "aniv_list": aniv_list}
