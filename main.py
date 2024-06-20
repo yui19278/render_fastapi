@@ -58,6 +58,10 @@ async def aniv_list():
         "国民の祝日",
         "振替休日"
     ]
-    today = datetime.date.today()
-    weekday = today.strftime("%A")
-    return {"response": f"サーバです。本日は {today}（{weekday}）です。", "aniv_list": aniv_list}
+    
+    def youraniv(aniv):
+        today = datetime.date.today()
+        weekday = today.strftime("%A")
+        return {"response": f"サーバです。本日は {today}（{weekday}）です。{aniv}は{aniv_list}です。", "aniv_list": aniv_list}
+    
+    return youraniv(aniv_list)
